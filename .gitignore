@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
+
+# not commiting js files
+app/*.js
+app/*.map
