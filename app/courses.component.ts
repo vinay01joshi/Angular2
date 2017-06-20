@@ -19,8 +19,7 @@ import { Component } from 'angular2/core';
 })
 export class CoursesComponent {
     title = "The title of courses page";
-    courses;
-
+    courses;    
     constructor(courseService : CourseService){
         this.courses = courseService.getCourses();
     }
