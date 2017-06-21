@@ -5,7 +5,7 @@ import { Component, Input, EventEmitter, Output } from "angular2/core";
     templateUrl : 'app/star.templage.html'
 })
 export class StarComponent {
-    @Input('is-favorite') isFavorite = false;// making this property as public comment
+    @Input('is-favorite') isFavorite = false;// making this property as public
 
     @Output() change = new EventEmitter();
 
