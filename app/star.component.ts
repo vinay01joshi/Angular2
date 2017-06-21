@@ -2,7 +2,12 @@ import { Component, Input, EventEmitter, Output } from "angular2/core";
 
 @Component({
     selector : 'star',
-    templateUrl : 'app/star.templage.html'
+    templateUrl : 'app/star.templage.html',
+    styles :[`
+                .glyphicon-star {
+                    color : orange
+                }
+            `]
 })
 export class StarComponent {
     @Input('is-favorite') isFavorite = false;// making this property as public

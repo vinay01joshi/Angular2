@@ -26,6 +26,7 @@ import { StarComponent } from "./star.component";
                          <input type="text" bindon-ngModel = "title">
                     </div>
                     <div>   
+                        <i class="glyphicon glyphicon-star"></i>
                         <star [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></star>
                     </div>
                 `,
