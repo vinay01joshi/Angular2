@@ -1,3 +1,4 @@
+import { VoterComponent } from './voter.component';
 import { Component } from 'angular2/core';
 import { StarComponent } from "./star.component";
 import { LikeComponent } from "./like.component";
@@ -33,8 +34,11 @@ import { LikeComponent } from "./like.component";
                     <div>
                         <like [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></like>
                     </div>
+                    <div>
+                        <voter [voteCount]="postVote.voteCount" [myVote]="postVote.myVote" (vote) = "onVote($event)" ></voter>
+                    </div>
                 `,
-    directives:[StarComponent,LikeComponent]
+    directives:[StarComponent,LikeComponent,VoterComponent]
 })
 export class BindingComponent {
     title = "Binding-Example";
@@ -59,6 +63,15 @@ export class BindingComponent {
      tweet = {
          totalLikes :10,
          iLike: false
+     }
+
+     postVote ={
+         voteCount : 10,
+         myVote : 0
+     }
+
+     onVote($event){
+        console.log($event);
      }
 
      onFavoriteChange($event){
