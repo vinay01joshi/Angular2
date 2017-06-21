@@ -1,5 +1,6 @@
 import { Component } from 'angular2/core';
 import { StarComponent } from "./star.component";
+import { LikeComponent } from "./like.component";
 
 @Component({
     selector  : 'bindings',
@@ -29,8 +30,11 @@ import { StarComponent } from "./star.component";
                         <i class="glyphicon glyphicon-star"></i>
                         <star [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></star>
                     </div>
+                    <div>
+                        <like></like>
+                    </div>
                 `,
-    directives:[StarComponent]
+    directives:[StarComponent,LikeComponent]
 })
 export class BindingComponent {
     title = "Binding-Example";
