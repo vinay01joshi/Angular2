@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { StarComponent } from "./star.component";
 
 @Component({
     selector  : 'bindings',
@@ -24,7 +25,11 @@ import { Component } from 'angular2/core';
                         <input type="text" [(ngModel)] = "title">
                          <input type="text" bindon-ngModel = "title">
                     </div>
-                `
+                    <div>   
+                        <star [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></star>
+                    </div>
+                `,
+    directives:[StarComponent]
 })
 export class BindingComponent {
     title = "Binding-Example";
@@ -40,4 +45,13 @@ export class BindingComponent {
     onDivClick(){
         console.log("Div clicked!");
     }
+
+     post = {
+         title : this.title,
+         isFavorite : true
+     }
+
+     onFavoriteChange($event){
+        console.log($event);
+     }
 }
