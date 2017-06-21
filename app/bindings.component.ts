@@ -31,7 +31,7 @@ import { LikeComponent } from "./like.component";
                         <star [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></star>
                     </div>
                     <div>
-                        <like></like>
+                        <like [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></like>
                     </div>
                 `,
     directives:[StarComponent,LikeComponent]
@@ -54,6 +54,11 @@ export class BindingComponent {
      post = {
          title : this.title,
          isFavorite : true
+     }
+
+     tweet = {
+         totalLikes :10,
+         iLike: false
      }
 
      onFavoriteChange($event){

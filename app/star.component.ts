@@ -6,10 +6,11 @@ import { Component, Input, EventEmitter, Output } from "angular2/core";
     styles :[`
                 .glyphicon-star {
                     color : orange
-                }
+                }                
             `]
 })
 export class StarComponent {
+    
     @Input('is-favorite') isFavorite = false;// making this property as public
 
     @Output() change = new EventEmitter();
