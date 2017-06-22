@@ -5,6 +5,7 @@ import { Component } from 'angular2/core';
 @Component({
     selector: 'courses', 
     template : `
+        <div *ngIf="courses.length >0">
            <h2>Courses</h2>
            {{title}}
            <input type="text" autoGrow />
@@ -13,14 +14,21 @@ import { Component } from 'angular2/core';
                    {{course}}
                </li>
            </ul>
+        </div>
+        <div *ngIf="courses.length ==0">
+            you donot have any cources yet.
+        </div>
+        <div [hidden]="courses.length ==0">
+            this is hidden div rendered on the dom
+        </div>
         `,
     providers:[CourseService],
     directives :[AutoGrowDirective]
 })
 export class CoursesComponent {
     title = "The title of courses page";
-    courses;    
+    courses = [];    
     constructor(courseService : CourseService){
-        this.courses = courseService.getCourses();
+        //this.courses = courseService.getCourses();
     }
 }
