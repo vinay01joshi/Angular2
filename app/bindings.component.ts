@@ -27,8 +27,7 @@ import { LikeComponent } from "./like.component";
                         <input type="text" [(ngModel)] = "title">
                          <input type="text" bindon-ngModel = "title">
                     </div>
-                    <div>   
-                        <i class="glyphicon glyphicon-star"></i>
+                    <div>                           
                         <star [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></star>
                     </div>
                     <div>
@@ -36,6 +35,16 @@ import { LikeComponent } from "./like.component";
                     </div>
                     <div>
                         <voter [voteCount]="postVote.voteCount" [myVote]="postVote.myVote" (vote) = "onVote($event)" ></voter>
+                    </div>
+                    <div>
+                        <button                           
+                            [ngStyle]="{
+                                backgroundColor: canSave ? 'blue' : 'grey',
+                                color : canSave? 'white' : 'black',
+                                fontWeight : canSave ? 'bold' : 'normal'
+                            }"
+                            >Submit                          
+                        </button>
                     </div>
                 `,
     directives:[StarComponent,LikeComponent,VoterComponent]
@@ -45,7 +54,7 @@ export class BindingComponent {
     bindingText = "This is Exmaple of Property Binding";
     imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbj4ckLzT-WqEKUbTeeVyyOp4UPi1UXHIrc7OlBBpiqQaUO9Q4";
     isActive = true;
-
+    canSave = true;
     onClick($event){
         $event.stopPropagation();
         console.log("Event binding is clicked !" , $event);

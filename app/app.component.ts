@@ -10,7 +10,7 @@ import { PipeComponent } from "./pipe.component";
     selector: 'my-app',
     template: `
                 <h1>My First Angular 2 App</h1>
-                <pipeEx></pipeEx>
+                <bindings></bindings>
               `,
     directives:[CoursesComponent,AuthorsCoponent,BindingComponent,TweetComponent,TabComponent,PipeComponent]
 })
