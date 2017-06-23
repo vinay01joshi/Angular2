@@ -10,8 +10,8 @@ import { Component } from 'angular2/core';
            {{title}}
            <input type="text" autoGrow />
            <ul>
-               <li *ngFor="#course of courses">
-                   {{course}}
+               <li *ngFor="#course of courses , #i = index">
+                   {{ i + 1}} - {{course}}                  
                </li>
            </ul>
         </div>
@@ -29,6 +29,6 @@ export class CoursesComponent {
     title = "The title of courses page";
     courses = [];    
     constructor(courseService : CourseService){
-        //this.courses = courseService.getCourses();
+        this.courses = courseService.getCourses();
     }
 }

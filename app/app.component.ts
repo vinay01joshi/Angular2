@@ -9,7 +9,7 @@ import { TabComponent } from "./tab.component";
     selector: 'my-app',
     template: `
                 <h1>My First Angular 2 App</h1>
-                <tabview></tabview>
+                <courses></courses>
               `,
     directives:[CoursesComponent,AuthorsCoponent,BindingComponent,TweetComponent,TabComponent]
 })
