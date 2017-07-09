@@ -18,7 +18,7 @@ import { BootstrapPanel } from "./bootstrap.panel.component";
             <div class="body">This is the body!</div>            
         </bs-panel>
         <task></task>     
-    <div>                           
+    <div>                             
     `,
     directives:[CoursesComponent
                 ,AuthorsCoponent
