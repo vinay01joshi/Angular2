@@ -7,17 +7,18 @@ import { TabComponent } from "./tab.component";
 import { PipeComponent } from "./pipe.component";
 import { TaskComponent } from "./task.component";
 import { BootstrapPanel } from "./bootstrap.panel.component";
+import { ZippyComponent } from "./zippy.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-        <h1>My First Angular 2 App</h1>
-        <bs-panel>
-            <div class="heading">Heading</div>
-            <div class="body">This is the body!</div>            
-        </bs-panel>
-        <task></task>     
+       <zippy title="Who can see my stuff?">
+            content of who can see my stuff
+       </zippy>
+       <zippy title="Who can Contact me?">
+            content of who can contact me
+       </zippy>
     <div>                             
     `,
     directives:[CoursesComponent
@@ -27,6 +28,7 @@ import { BootstrapPanel } from "./bootstrap.panel.component";
                 ,TabComponent
                 ,PipeComponent
                 ,TaskComponent
-                ,BootstrapPanel]
+                ,BootstrapPanel
+                ,ZippyComponent]
 })
 export class AppComponent { }
