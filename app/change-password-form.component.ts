@@ -18,4 +18,13 @@ export class ChangePasswordComponent {
             confirmPassword: ['', Validators.required]
         },{ validator: PasswordValidator.passwordsShouldMatch });
     }
+
+    changePassword(){
+        var oldPassword = this.form.find('currentPassword');
+        if (oldPassword.value != '1234') 
+            oldPassword.setErrors({ validOldPassword: true });
+
+        if (this.form.valid)
+            alert("Password successfully changed.");
+    }
 }
