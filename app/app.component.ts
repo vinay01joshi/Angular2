@@ -10,12 +10,13 @@ import { BootstrapPanel } from "./bootstrap.panel.component";
 import { ZippyComponent } from "./zippy.component";
 import { ContactFormComponent } from "./contact-form.component";
 import { SubscriptionComponent } from "./subscription-form.component";
+import { SignupComponent } from "./signup.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <subscription-form></subscription-form>
+       <sign-up></sign-up>
     <div>                             
     `,
     directives:[CoursesComponent
@@ -28,6 +29,7 @@ import { SubscriptionComponent } from "./subscription-form.component";
                 ,BootstrapPanel
                 ,ZippyComponent
                 ,ContactFormComponent
-                ,SubscriptionComponent]
+                ,SubscriptionComponent
+                ,SignupComponent]
 })
 export class AppComponent { }
