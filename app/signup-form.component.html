@@ -18,6 +18,11 @@
                 *ngIf="username.errors.cannotContainSpace">
                 Username cannot contain space
             </div>
+            <div
+                *ngIf="username.errors.shouldBeUnique" 
+                class="alert alert-danger">
+                    This username is already taken.
+            </div>
         </div>
         
     </div>

@@ -10,10 +10,11 @@ export class SignupComponent {
     form : ControlGroup;
     constructor(fb : FormBuilder){
         this.form = fb.group({
-            username : ['',Validators.compose([
+            username : ['',
+                Validators.compose([
                 Validators.required,
-                UsernameValidators.cannotContainSpace]
-            )],
+                UsernameValidators.cannotContainSpace
+                ]),UsernameValidators.shouldBeUnique],
             password : ['',Validators.required]
         })
     }
