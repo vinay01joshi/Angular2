@@ -9,12 +9,13 @@ import { TaskComponent } from "./task.component";
 import { BootstrapPanel } from "./bootstrap.panel.component";
 import { ZippyComponent } from "./zippy.component";
 import { ContactFormComponent } from "./contact-form.component";
+import { SubscriptionComponent } from "./subscription-form.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <contact-form></contact-form>
+       <subscription-form></subscription-form>
     <div>                             
     `,
     directives:[CoursesComponent
@@ -26,6 +27,7 @@ import { ContactFormComponent } from "./contact-form.component";
                 ,TaskComponent
                 ,BootstrapPanel
                 ,ZippyComponent
-                ,ContactFormComponent]
+                ,ContactFormComponent
+                ,SubscriptionComponent]
 })
 export class AppComponent { }
