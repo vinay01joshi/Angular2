@@ -11,12 +11,13 @@ import { ZippyComponent } from "./zippy.component";
 import { ContactFormComponent } from "./contact-form.component";
 import { SubscriptionComponent } from "./subscription-form.component";
 import { SignupComponent } from "./signup.component";
+import { ChangePasswordComponent } from "./change-password-form.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <sign-up></sign-up>
+       <change-password></change-password>
     <div>                             
     `,
     directives:[CoursesComponent
@@ -30,6 +31,7 @@ import { SignupComponent } from "./signup.component";
                 ,ZippyComponent
                 ,ContactFormComponent
                 ,SubscriptionComponent
-                ,SignupComponent]
+                ,SignupComponent
+                ,ChangePasswordComponent]
 })
 export class AppComponent { }
