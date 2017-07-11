@@ -8,17 +8,13 @@ import { PipeComponent } from "./pipe.component";
 import { TaskComponent } from "./task.component";
 import { BootstrapPanel } from "./bootstrap.panel.component";
 import { ZippyComponent } from "./zippy.component";
+import { ContactFormComponent } from "./contact-form.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <zippy title="Who can see my stuff?">
-            content of who can see my stuff
-       </zippy>
-       <zippy title="Who can Contact me?">
-            content of who can contact me
-       </zippy>
+       <contact-form></contact-form>
     <div>                             
     `,
     directives:[CoursesComponent
@@ -29,6 +25,7 @@ import { ZippyComponent } from "./zippy.component";
                 ,PipeComponent
                 ,TaskComponent
                 ,BootstrapPanel
-                ,ZippyComponent]
+                ,ZippyComponent
+                ,ContactFormComponent]
 })
 export class AppComponent { }
