@@ -12,12 +12,13 @@ import { ContactFormComponent } from "./contact-form.component";
 import { SubscriptionComponent } from "./subscription-form.component";
 import { SignupComponent } from "./signup.component";
 import { ChangePasswordComponent } from "./change-password-form.component";
+import { ReactiveExtensionComponent } from "./reactive-extension.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <change-password></change-password>
+       <reactive-ex></reactive-ex>
     <div>                             
     `,
     directives:[CoursesComponent
@@ -32,6 +33,7 @@ import { ChangePasswordComponent } from "./change-password-form.component";
                 ,ContactFormComponent
                 ,SubscriptionComponent
                 ,SignupComponent
-                ,ChangePasswordComponent]
+                ,ChangePasswordComponent
+                ,ReactiveExtensionComponent]
 })
 export class AppComponent { }

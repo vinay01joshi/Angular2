@@ -10,6 +10,9 @@ typings/
 # dotenv environment variables file
 .env
 
+#excluding log files
+*.log
+
 # not commiting js files
 app/*.js
 app/*.map
