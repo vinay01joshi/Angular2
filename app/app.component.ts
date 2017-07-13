@@ -15,16 +15,18 @@ import { ChangePasswordComponent } from "./change-password-form.component";
 import { ReactiveExtensionComponent } from "./reactive-extension.component";
 import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
 import { PostComponent } from "./post.component";
+import { GitHubProfileComponent } from "./github-profile.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <post-component></post-component>
+       <github-profile></github-profile>
     <div>                             
     `,
     directives:[
-                 PostComponent
+                GitHubProfileComponent
+                ,PostComponent
                 ,AdvatureReactiveExtension
                 ,CoursesComponent
                 ,AuthorsCoponent
