@@ -22,7 +22,9 @@ import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
        <advanture-rx></advanture-rx>
     <div>                             
     `,
-    directives:[CoursesComponent
+    directives:[
+                AdvatureReactiveExtension
+                ,CoursesComponent
                 ,AuthorsCoponent
                 ,BindingComponent
                 ,TweetComponent
@@ -36,6 +38,6 @@ import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
                 ,SignupComponent
                 ,ChangePasswordComponent
                 ,ReactiveExtensionComponent
-                ,AdvatureReactiveExtension]
+                ]
 })
 export class AppComponent { }

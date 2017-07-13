@@ -93,6 +93,39 @@ export class AdvatureReactiveExtension {
                 return localDataStram;
             })
             .subscribe(x=>console.log(x));
+    
+        /*Question in quiz*/
+        Observable.fromArray([1,2,3])
+            .take(3)
+            .subscribe(x=> console.log('Question 1- Answer',x));
+
+        Observable.of([1,2,3,4,5])
+            .take(3)
+            .subscribe(x=> console.log('Question 1- Answer',x));
+
+        Observable.fromArray([1,2,3])           
+            .subscribe(
+                x=> console.log('Question 3- Answer',x),
+                error => console.error(error),
+                ()=> console.log("Completed")
+            );
+
+        Observable.fromArray(['b','bo','boo','book'])
+            .filter(x=>x.length > 3)
+            .subscribe(x=> console.log('Question 4 - Answer',x));
+
+        Observable.fromArray(['n','g',' ','2'])
+            .map(x=> (<string>x).replace(' ','-'))
+            .subscribe(x=> console.log('Question 5 - Answer',x));
+
+        Observable.fromArray([1,2,3])
+            .flatMap(x=> Observable.of(['a','b','c']))
+            .subscribe(x=> console.log('Question 6- Answer',x));
+
+        Observable.forkJoin(
+            Observable.of({username : 'vinay'}),
+            Observable.of([1,2,3])
+        ).subscribe(x=> console.log("Question 7- Answer -",x[0]))
     }
 
 }
