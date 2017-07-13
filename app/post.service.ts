@@ -13,7 +13,7 @@ export class PostService {
 
     getPosts() : Observable<Post[]> {
       return  this._http.get(this._url)
-           .map(res=> res.json());        
+           .map(res=> res.json());    //some changes here    
     }
 
     cratePost(post : Post){
