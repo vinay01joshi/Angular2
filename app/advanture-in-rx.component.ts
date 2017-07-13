@@ -39,8 +39,60 @@ export class AdvatureReactiveExtension {
 
         Observable
             .fromArray(startDates)
-            .map(date=> console.log("Getting deals for date" + date))
+            .map(date=> {
+              console.log("Getting deals for date" + date);
+              return [1,2,3];
+            })              
             .subscribe(x=> console.log(x));
+    
+        // var observable = Observable.interval(1000);
+        // observable
+        //     .flatMap(x=> {
+        //         console.log("calling the server to get the latest news");
+        //         return Observable.of([1,2,3]);
+        //     })
+        //     .subscribe(x=>console.log(x));
+        
+            var userStream = Observable.of({
+                userId : 1 ,
+                username : 'vinay'
+            });
+
+            var tweetStream = Observable.of([1,2,3]).delay(1500);
+
+            //fork join between to call using parallel calls using rx-js observable
+            
+            Observable
+                .forkJoin(userStream , tweetStream)
+                .map(joined => new Object({user : joined[0], tweets : joined[1]}))
+                .subscribe(result=> console.log(result));
+
+        var errorObservable = Observable.throw(new Error("someting failed ."));
+        errorObservable.subscribe(
+            x=> x.console.log(x),
+            error => console.error(error)
+        );
+
+        var counter = 0 ;
+
+        var ajaxCall = Observable.of('url')
+            .flatMap(()=>{
+                if(++counter < 2)
+                    return Observable.throw(new Error("Request Falied"));
+
+                return Observable.of([1,2,3]);
+            })
+            .subscribe(x=> console.log(x),
+                        error => console.error(error)
+        );
+
+        var remoteDataStream = Observable.throw(new Error("Someting failed."));
+        remoteDataStream
+            .catch(err => {
+                var localDataStram = Observable.of([1,2,3,6,7,8,9]);
+                return localDataStram;
+            })
+            .subscribe(x=>console.log(x));
     }
 
 }
