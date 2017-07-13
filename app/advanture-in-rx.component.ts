@@ -101,7 +101,7 @@ export class AdvatureReactiveExtension {
 
         Observable.of([1,2,3,4,5])
             .take(3)
-            .subscribe(x=> console.log('Question 1- Answer',x));
+            .subscribe(x=> console.log('Question 2- Answer',x));
 
         Observable.fromArray([1,2,3])           
             .subscribe(
@@ -125,7 +125,8 @@ export class AdvatureReactiveExtension {
         Observable.forkJoin(
             Observable.of({username : 'vinay'}),
             Observable.of([1,2,3])
-        ).subscribe(x=> console.log("Question 7- Answer -",x[0]))
+        ).subscribe(x=> console.log("Question 7- Answer -",x[0]));
+       
     }
 
 }

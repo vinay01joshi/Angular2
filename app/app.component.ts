@@ -14,16 +14,18 @@ import { SignupComponent } from "./signup.component";
 import { ChangePasswordComponent } from "./change-password-form.component";
 import { ReactiveExtensionComponent } from "./reactive-extension.component";
 import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
+import { PostComponent } from "./post.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <advanture-rx></advanture-rx>
+       <post-component></post-component>
     <div>                             
     `,
     directives:[
-                AdvatureReactiveExtension
+                 PostComponent
+                ,AdvatureReactiveExtension
                 ,CoursesComponent
                 ,AuthorsCoponent
                 ,BindingComponent
