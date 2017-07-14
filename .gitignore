@@ -14,5 +14,5 @@ typings/
 *.log
 
 # not commiting js files
-app/*.js
-app/*.map
+app/**/*.js
+app/**/*.map

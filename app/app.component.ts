@@ -16,16 +16,18 @@ import { ReactiveExtensionComponent } from "./reactive-extension.component";
 import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
 import { PostComponent } from "./post.component";
 import { GitHubProfileComponent } from "./github-profile.component";
+import { RoutingComponent } from "./routing/routing.component";
 
 @Component({
     selector: 'my-app',
     template: `
     <div class="container">
-       <github-profile></github-profile>
+       <routing-compo></routing-compo>
     <div>                             
     `,
     directives:[
-                GitHubProfileComponent
+                 RoutingComponent
+                ,GitHubProfileComponent
                 ,PostComponent
                 ,AdvatureReactiveExtension
                 ,CoursesComponent
@@ -41,7 +43,6 @@ import { GitHubProfileComponent } from "./github-profile.component";
                 ,SubscriptionComponent
                 ,SignupComponent
                 ,ChangePasswordComponent
-                ,ReactiveExtensionComponent
-                ]
+                ,ReactiveExtensionComponent]
 })
 export class AppComponent { }
