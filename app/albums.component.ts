@@ -21,9 +21,7 @@ export class AlbumsComponent implements OnInit {
     albums;
 
     constructor(private _photoService: PhotoService){
-        console.log('call albums componnent')
     }
-
     
     ngOnInit(){
         this._photoService.getAlbums()

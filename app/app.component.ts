@@ -1,7 +1,13 @@
+import {Component} from 'angular2/core';
+import { RouteConfig ,RouterOutlet} from 'angular2/router';
+
+import { ContactComponent } from './contact.component';
+import { AlbumComponent } from './album.component';
+import { AlbumsComponent } from './albums.component';
+
 import { BindingComponent } from './bindings.component';
 import { AuthorsCoponent } from './authors.component';
 import { CoursesComponent } from './courses.component';
-import {Component} from 'angular2/core';
 import { TweetComponent } from "./tweet.component";
 import { TabComponent } from "./tab.component";
 import { PipeComponent } from "./pipe.component";
@@ -16,17 +22,18 @@ import { ReactiveExtensionComponent } from "./reactive-extension.component";
 import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
 import { PostComponent } from "./post.component";
 import { GitHubProfileComponent } from "./github-profile.component";
-import { RoutingComponent } from "./routing/routing.component";
 
+
+@RouteConfig([
+    {path : '/albums' , name : 'Albums' ,component : AlbumsComponent ,  useAsDefault : true},
+    {path : '/contatct' , name : 'Contacts' , component : ContactComponent},
+    {path : '/*other' , name : 'Other' , redirectTo : ['Albums']}
+])
 @Component({
     selector: 'my-app',
-    template: `
-    <div class="container">
-       <routing-compo></routing-compo>
-    <div>                             
-    `,
+    templateUrl :'/app/app.component.html',
     directives:[
-                 RoutingComponent
+                RouterOutlet
                 ,GitHubProfileComponent
                 ,PostComponent
                 ,AdvatureReactiveExtension
