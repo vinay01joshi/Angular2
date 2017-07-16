@@ -26,6 +26,7 @@ import { GitHubProfileComponent } from "./github-profile.component";
 
 @RouteConfig([
     {path : '/albums' , name : 'Albums' ,component : AlbumsComponent ,  useAsDefault : true},
+    {path : '/albums/:id' , name : 'Album' ,component : AlbumComponent},
     {path : '/contact' , name : 'Contact' , component : ContactComponent},
     {path : '/*other' , name : 'Other' , redirectTo : ['Albums']}
 ])
