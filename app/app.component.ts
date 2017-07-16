@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import { RouteConfig ,RouterOutlet} from 'angular2/router';
+import { RouteConfig ,RouterOutlet ,RouterLink} from 'angular2/router';
 
 import { ContactComponent } from './contact.component';
 import { AlbumComponent } from './album.component';
@@ -26,14 +26,15 @@ import { GitHubProfileComponent } from "./github-profile.component";
 
 @RouteConfig([
     {path : '/albums' , name : 'Albums' ,component : AlbumsComponent ,  useAsDefault : true},
-    {path : '/contatct' , name : 'Contacts' , component : ContactComponent},
+    {path : '/contact' , name : 'Contact' , component : ContactComponent},
     {path : '/*other' , name : 'Other' , redirectTo : ['Albums']}
 ])
 @Component({
     selector: 'my-app',
     templateUrl :'/app/app.component.html',
     directives:[
-                RouterOutlet
+                RouterOutlet 
+                ,RouterLink               
                 ,GitHubProfileComponent
                 ,PostComponent
                 ,AdvatureReactiveExtension
