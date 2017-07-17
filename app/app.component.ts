@@ -23,16 +23,29 @@ import { AdvatureReactiveExtension } from "./advanture-in-rx.component";
 import { PostComponent } from "./post.component";
 import { GitHubProfileComponent } from "./github-profile.component";
 
-
+/*Exsersize blogging route url */
+import {HomeComponent} from './home.component';
+import {ArchivesComponent} from './archives.component';
+/*
 @RouteConfig([
     {path : '/albums' , name : 'Albums' ,component : AlbumsComponent ,  useAsDefault : true},
     {path : '/albums/:id' , name : 'Album' ,component : AlbumComponent},
     {path : '/contact' , name : 'Contact' , component : ContactComponent},
     {path : '/*other' , name : 'Other' , redirectTo : ['Albums']}
 ])
+*/
+
+@RouteConfig([
+    { path: '/', name: 'Home', component: HomeComponent },
+    { path: '/archives/:year/:month', name: 'Archives', component: ArchivesComponent },
+    { path: '/*other', name: 'Other', redirectTo: ['Home'] }
+])
 @Component({
     selector: 'my-app',
-    templateUrl :'/app/app.component.html',
+    template : `
+          <router-outlet></router-outlet>
+    `,
+   // templateUrl :'/app/app.component.html',
     directives:[
                 RouterOutlet 
                 ,RouterLink               
